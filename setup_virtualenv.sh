@@ -1,10 +1,11 @@
 #!/bin/bash
 
-virtualenv .env -p python3.7
+virtualenv .env -p python3.11
 source .env/bin/activate
 
 pip --use-deprecated=legacy-resolver install pip==22.2.2
 pip --use-deprecated=legacy-resolver install -U setuptools wheel twine
+pip --use-deprecated=legacy-resolver install spacy nltk
 echo 'Installing DoXpy'
 pip --use-deprecated=legacy-resolver install -e doxpy
 
