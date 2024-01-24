@@ -20,15 +20,36 @@ You may find a thorough discussion of the underlying theory in this paper [An Ob
 **Preprint available at: [http://arxiv.org/abs/2109.05327](http://arxiv.org/abs/2109.05327)**
   
 ## Installation
+
 This project has been tested on Debian 9 and macOS Mojave 10.14 with Python 3.7. 
+
+Along with Python 3.11 within a Dev Container on Visual Studio Code.
+
 The script [setup_virtualenv.sh](setup_virtualenv.sh) can install DoXpy and all its dependencies in a python3.7 virtualenv.
 
-You can also install DoXpy by downloading this repo and running from within it: 
-`pip install  --use-deprecated=legacy-resolver -e doxpy --no-cache-dir`
+This project can be used with the Dockerfile provided in this repo.
 
+You can use the following commands to run the Dockerfile:
+```bash
+docker build -t doxpy-image .
+```
+# Start a container from your image
+```bash
+docker run -d --name doxpy-container doxpy-image
+```
+
+```bash
+docker exec -it doxpy-container bash
+```
+
+
+You can also install DoXpy by downloading this repo and running from within it: 
+```bash
+`pip install  --use-deprecated=legacy-resolver -e doxpy --no-cache-dir`
+```
 Before being able to run the [setup_virtualenv.sh](setup_virtualenv.sh) script, you have to install: virtualenv, python3-dev, python3-pip and make. 
 
-For a simple example of how to use DoXpy, please consider the script [simple_example.py](simple_example.py).
+For a simple example of how to use DoXpy, please consider the script [doxpy/simple_example.py](doxpy/simple_example.py).
 
 ## What to know
 DoXpy is a python library allowing you to measure different aspects of explainability, such as fruitfulness, exactness and similarity to the explanandum.
